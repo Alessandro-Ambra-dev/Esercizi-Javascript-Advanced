@@ -6,7 +6,7 @@ const person = {
 
 
 for (const keys in person) {
-  console.log(keys, person[keys]);
+  console.log(keys, ":", person[keys]);
 
 }
 
