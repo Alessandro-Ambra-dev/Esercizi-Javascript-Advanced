@@ -1,10 +1,16 @@
 const person = {
   id: 1,
-  firstName: 'Mario',
-  lastName: 'Rossi',
+  firstName: "Mario",
+  lastName: "Rossi",
   age: 25,
 };
 
-const json = JSON.stringify(person);
+const json = JSON.stringify(person, (key, val) => {
+  if (typeof val === "string") {
+    return undefined;
+  } else return val;
+});
 
-console.log(json); // Should return: { id: 1, age: 25 }
+const obj = JSON.parse(json)
+
+console.log(obj); // Should return: { id: 1, age: 25 }
